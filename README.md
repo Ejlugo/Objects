@@ -106,12 +106,62 @@ let user = {
 In JS *this* is a keyword that refers to that current object *this* is used in. 
 
 ```javascript
-	const classCodeBridge = {
-		name: ‘cohort X’, 
-		count: 20, 
-		transition: ‘Oct 8th, 2018’, 
-		sayHeyCohortX(){
-			console.log(`Hey this is ${this.name} and the class 					transitions to GA on ${this.transition}`)
-		},
-	}
+// the following object are the exact same
+const classCodeBridge = {
+    name: 'cohort X', 
+    count: 20, 
+    transition: 'Oct 8th, 2018', 
+    sayHeyCohortX(){
+        console.log(`Hey this is ${this.name} and the class transitions to GA on ${this.transition}`)
+    },
+}
+
+const classCodeBridge = {
+    name: 'cohort X', 
+    count: 20, 
+    transition: 'Oct 8th, 2018', 
+    sayHeyCohortX: function(){
+        console.log('Hey this is ' + this.name + 'and the class transitions to GA on ' + this.transition)
+    },
+}
+
+classCodeBridge.sayHeyCohortX()
+
+=> Hey this is cohort X and the class transtions to GA on Oct 8th, 2018
+```
+
+## for ... in
+[for...in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in) statements iterates over all non-[Symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol), [enumerable properties](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) of an object 
+
+```javascript
+let phoneObject = {
+    make: ‘Apple’,
+    name: ‘iPhone XS’
+    model: ‘A1920’,
+    year: 2018, 
+    color: ‘gold’,
+}
+
+let phoneFunction = () => {
+    for(let i in phoneObject){
+        console.log(`${phoneObject[i]}`)
+    }
+}
+```
+
+## Comparing Objects
+In javascript if two objects are made seperately, they are completely different entities, even if their properties are identical. 
+
+```javascript
+const student = {name: 'Chris'};
+=> undefined
+
+const student2 = {name: 'Chris'};
+=> undefined
+
+student == student2
+=> false
+
+student === student
+=> true
 ```
