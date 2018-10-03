@@ -105,7 +105,7 @@ let user = {
 *this* for objects references. 
 In JS *this* is a keyword that refers to that current object *this* is used in. 
 
-```javascript
+```
 // the following object are the exact same
 const classCodeBridge = {
     name: 'cohort X', 
