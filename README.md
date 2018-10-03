@@ -32,3 +32,28 @@ const person = {
 person.name
 => 'Ash'
 ```
+You can define or re-assign a property by assigning it a value using = as you would a normal variable
+
+```javascript
+const person = {
+    name: 'Ash'
+}
+person.name
+=> 'Ash'
+
+person.name = 'Gary'; 
+person.name 
+=> 'Gary'
+```
+
+## Braket vs Dot Notation
+You can use bracket as well as dot notation, but it’s standard and better understood by other developers to use dot notation to access objects. 
+
+WRONG: person.date of birth = '1994-06-17'; 
+RIGHT: person['date of birth] = '1994-06-17'; 
+
+|dot-notation| bracket-notation|
+|---|---|
+|***Directly*** accesses a ***literally-named*** property of the object| ***Evaluates*** what's in the bracket ***before*** accessing the object|
+| ***Cannot*** handle keys with spaces; property MUST be a valid JS identifier | ***Can*** handle keys with spaces (as a string)|
+||Can be a ***variable***|
