@@ -2,7 +2,7 @@
 [Here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) is a resource and documentation on what is an object, please read and learn about what an object is, how it’s used, and what methods you can use on objects
 
 ## Creating Objects
-Object constructor 
+Object [constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) 
 
 ```javascript
 const person = new Object();
@@ -11,7 +11,7 @@ const person = new Object();
     person.age = 50; 
     person.eyeColor = “blue”;
 ```
-Object literal syntax
+Object [initializer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer)
 
 ```javascript
 const person = {
@@ -32,7 +32,7 @@ const person = {
 person.name
 => 'Ash'
 ```
-You can define or re-assign a property by assigning it a value using = as you would a normal variable
+You can define or re-assign a property by assigning it a value using `=` as you would a normal variable
 
 ```javascript
 const person = {
@@ -70,8 +70,48 @@ const classroom = {
     city: 'Bronx', 
     transition: 'Oct 8th, 2018'
 }; 
+
 delete classroom.city; 
 
 classroom
 => { name: 'Cohort X', count: 20, transtion: 'Oct 8th, 2018' }
+```
+## Object Methods
+
+The value of an object can be anything in Javascript, meaning we can attach functions to 	object properties. When we do this, those functions becomes a method. 
+
+There are also predetermined object methods that are preloaded on the browser that developers can use. Later on when you learn more about frameworks, and libraries, you can also use those predetermined methods
+
+```javascript
+// the following objects are exactly the same
+let user = {
+    sayHello: function(){
+        alert("Hello"); 
+    }
+    firstname: "Kenny",
+    lastname: "Cruzer",
+}; 
+
+let user = {
+    sayHi() {
+        alert("Hello"); 
+    }
+    name: "Kenny", 
+    lastname: "Cruzer"
+}
+```
+
+## This
+*this* for objects references. 
+In JS *this* is a keyword that refers to that current object *this* is used in. 
+
+```javascript
+	const classCodeBridge = {
+		name: ‘cohort X’, 
+		count: 20, 
+		transition: ‘Oct 8th, 2018’, 
+		sayHeyCohortX(){
+			console.log(`Hey this is ${this.name} and the class 					transitions to GA on ${this.transition}`)
+		},
+	}
 ```
