@@ -48,13 +48,30 @@ person.name
 
 ## Braket vs Dot Notation
 You can use bracket as well as dot notation, but it’s standard and better understood by other developers to use dot notation to access objects. 
-```javascript
-WRONG: person.date of birth = '1994-06-17'; 
-RIGHT: person['date of birth] = '1994-06-17'; 
-```
+
+
+* WRONG: person.date of birth = '1994-06-17'; 
+* RIGHT: person['date of birth] = '1994-06-17'; 
+
 
 |dot-notation| bracket-notation|
 |---|---|
 |***Directly*** accesses a ***literally-named*** property of the object| ***Evaluates*** what's in the bracket ***before*** accessing the object|
 | ***Cannot*** handle keys with spaces; property MUST be a valid JS identifier | ***Can*** handle keys with spaces (as a string)|
 ||Can be a ***variable***|
+
+## Deleting Proterperties 
+When deleting properties of an object, by extension, the value goes too. You need to use the [`delete`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete) operator:
+
+```javascript
+const classroom = {
+    name: 'Cohort X', 
+    count: 20, 
+    city: 'Bronx', 
+    transition: 'Oct 8th, 2018'
+}; 
+delete classroom.city; 
+
+classroom
+=> { name: 'Cohort X', count: 20, transtion: 'Oct 8th, 2018' }
+```
