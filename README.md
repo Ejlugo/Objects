@@ -48,9 +48,10 @@ person.name
 
 ## Braket vs Dot Notation
 You can use bracket as well as dot notation, but it’s standard and better understood by other developers to use dot notation to access objects. 
-
+```javascript
 WRONG: person.date of birth = '1994-06-17'; 
 RIGHT: person['date of birth] = '1994-06-17'; 
+```
 
 |dot-notation| bracket-notation|
 |---|---|
